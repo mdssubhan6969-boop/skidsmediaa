@@ -2,16 +2,42 @@
 window.addEventListener('DOMContentLoaded', () => {
     const loader = document.getElementById('intro-loader');
     
-    // 5 second delay as requested
+    // Reduced delay for faster entry
     setTimeout(() => {
         loader.classList.add('fade-out');
         
         // Remove from DOM after fade to keep things clean
         setTimeout(() => {
             loader.remove();
+            startHeroLoop(); // Start the hero text loop after loader is gone
         }, 1000);
-    }, 5000);
+    }, 2500);
 });
+
+function startHeroLoop() {
+    const heroTitle = document.getElementById('hero-title-dynamic');
+    if (!heroTitle) return;
+
+    const phrases = [
+        "Website Production House,",
+        "Born in Dubai,",
+        "We build, we scale,",
+        "And you grow."
+    ];
+    let index = 0;
+
+    setInterval(() => {
+        heroTitle.style.opacity = 0;
+        heroTitle.style.transform = 'translateY(20px)';
+        
+        setTimeout(() => {
+            index = (index + 1) % phrases.length;
+            heroTitle.textContent = phrases[index];
+            heroTitle.style.opacity = 1;
+            heroTitle.style.transform = 'translateY(0)';
+        }, 500); // Wait for fade out
+    }, 2500); // 2.5s per phrase = 10s total loop
+}
 
 const translations = {
     en: {
@@ -54,9 +80,38 @@ const translations = {
         team_manifesto_1: "From ajman to dubai,",
         team_manifesto_2: "We come from all",
         team_manifesto_3: "over the world",
-        team_jibran_role: "CEO, SOCIAL MEDIA MANAGER",
-        team_hamza_role: "CUSTOMER SUPPORT, SALESMAN",
-        team_subhan_role: "CO-FOUNDER, WEB DEVELOPER",
+        team_jibran_role: "CEO",
+        team_hamza_role: "HEAD OF MARKETING",
+        nav_services: "SERVICES",
+        nav_packages: "PACKAGES",
+        nav_team: "TEAM",
+        nav_contact: "CONTACT",
+        services_title: "Our Services",
+        service_web: "Website Development",
+        service_app: "App Development",
+        service_social: "Social Media Management",
+        service_db: "Database Setup",
+        nav_process: "PROCESS",
+        services_more: "EXPLORE OTHER SERVICES",
+        other_services_hero: "Extended Services",
+        other_services_sub: "Deep specialized support for your digital growth.",
+        packages_title: "Website Development Packages",
+        p_startup_title: "Startup Website",
+        p_prof_title: "Professional Website",
+        p_elite_title: "Elite Website",
+        p_interactive_title: "Interactive High-End",
+        p_php_title: "Custom PHP Website",
+        p_lms_title: "Enterprise LMS",
+        nav_social_packages: "SOCIAL PACKAGES",
+        social_packages_title: "Social Media Management",
+        inquiry_title: "Ready to scale?",
+        inquiry_sub: "Send us a brief and we'll get back to you with a strategy.",
+        form_name: "Full Name",
+        form_email: "Email Address",
+        form_service: "Interested In",
+        form_message: "Tell us about your project",
+        form_submit: "SEND MESSAGE",
+        service_other: "Other Inquiry",
         contact_keep_in_touch: "Keep in touch",
         contact_start_conv: "Start a conversation",
         contact_offices: "Our offices :",
@@ -102,9 +157,9 @@ const translations = {
         team_manifesto_1: "عجمان سے دبئی تک،",
         team_manifesto_2: "ہم سب سے آتے ہیں",
         team_manifesto_3: "پوری دنیا میں",
-        team_jibran_role: "سی ای او، سوشل میڈیا مینیجر",
-        team_hamza_role: "کسٹمر سپورٹ، سیلز مین",
-        team_subhan_role: "شریک بانی، ویب ڈویلپر",
+        team_jibran_role: "سی ای او",
+        team_hamza_role: "مارکیٹنگ کا سربراہ",
+        team_subhan_role: "شریک بانی اور ترقی کے سربراہ",
         contact_keep_in_touch: "رابطے میں رہیں",
         contact_start_conv: "گفتگو شروع کریں",
         contact_offices: "ہمارے دفاتر:",
@@ -150,9 +205,9 @@ const translations = {
         team_manifesto_1: "من عجمان إلى دبي،",
         team_manifesto_2: "نحن نأتي من جميع",
         team_manifesto_3: "أنحاء العالم",
-        team_jibran_role: "الرئيس التنفيذي، مدير وسائل التواصل الاجتماعي",
-        team_hamza_role: "دعم العملاء، رجل مبيعات",
-        team_subhan_role: "مؤسس مشارك، مطور ويب",
+        team_jibran_role: "الرئيس التنفيذي",
+        team_hamza_role: "رئيس قسم التسويق",
+        team_subhan_role: "مؤسس مشارك ورئيس قسم التطوير",
         contact_keep_in_touch: "ابق على تواصل",
         contact_start_conv: "ابدأ محادثة",
         contact_offices: "مكاتبنا:",
@@ -215,9 +270,9 @@ const translations = {
         team_manifesto_1: "अजमान से दुबई तक,",
         team_manifesto_2: "हम सब से आते हैं",
         team_manifesto_3: "पूरी दुनिया में",
-        team_jibran_role: "सीईओ, सोशल मीडिया मैनेजर",
-        team_hamza_role: "ग्राहक सहायता, सेल्समैन",
-        team_subhan_role: "सह-संस्थापक, वेब डेवलपर",
+        team_jibran_role: "सीईओ",
+        team_hamza_role: "मार्केटिंग प्रमुख",
+        team_subhan_role: "सह-संस्थापक और विकास प्रमुख",
         contact_keep_in_touch: "संपर्क में रहें",
         contact_start_conv: "बातचीत शुरू करें",
         contact_offices: "हमारे कार्यालय:",
@@ -321,7 +376,26 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-document.querySelectorAll('.project-card, .section-title, .feature-section, .manifesto-section, .team-section').forEach(el => {
+// Mobile Menu Toggle
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const navLinks = document.querySelector('.nav-links');
+
+if (mobileMenuBtn) {
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileMenuBtn.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+}
+
+// Close mobile menu when clicking a link
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenuBtn.classList.remove('active');
+        navLinks.classList.remove('active');
+    });
+});
+
+document.querySelectorAll('.project-card, .section-title, .feature-section, .manifesto-section, .team-section, .service-item, .package-card, .add-ons-container, .inquiry-card').forEach(el => {
     el.classList.add('fade-in-hidden');
     observer.observe(el);
 });

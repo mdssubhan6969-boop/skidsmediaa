@@ -40,7 +40,7 @@
     </div>
 
     <nav>
-        <div class="container nav-container">
+        <div class="nav-container-fluid">
             <div class="logo">SKIDS MEDIA</div>
             <div class="nav-wrapper">
                 <div class="lang-selector">
@@ -49,9 +49,17 @@
                     <span data-lang="ar">AR</span>
                     <span data-lang="hi">HI</span>
                 </div>
+                <div class="menu-toggle" id="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                </div>
                 <ul class="nav-links">
                     <li><a href="#projects" data-i18n="nav_work">→ WORK</a></li>
                     <li><a href="#manifesto" data-i18n="nav_manifesto">MANIFESTO</a></li>
+                    <li><a href="#services" data-i18n="nav_services">SERVICES</a></li>
+                    <li><a href="process.html" data-i18n="nav_process">PROCESS</a></li>
+                    <li><a href="#packages" data-i18n="nav_packages">WEB PACKAGES</a></li>
+                    <li><a href="#social-packages" data-i18n="nav_social_packages">SOCIAL PACKAGES</a></li>
                     <li><a href="#team" data-i18n="nav_souls">SKIDS SOULS</a></li>
                     <li><a href="#team-cards" data-i18n="nav_team">TEAM</a></li>
                     <li><a href="#about-contact" data-i18n="nav_contact">CONTACT</a></li>
@@ -66,8 +74,14 @@
                 <source src="hero-video.mp4(1).mp4" type="video/mp4">
             </video>
             <div class="hero-overlay"></div>
-            <div class="blob"></div>
-            <h1 data-i18n="hero_title">Website Production House,</h1>
+            <h1 id="hero-title-dynamic">Website Production House,</h1>
+        </section>
+
+        <section id="manifesto" class="manifesto-section">
+            <h2 class="section-title" data-i18n="nav_manifesto">MANIFESTO</h2>
+            <div class="manifesto-text">
+                <p data-i18n="manifesto_text">WE BUILD, WE SCALE AND YOU GROW.</p>
+            </div>
         </section>
 
         <section id="projects" class="container">
@@ -135,59 +149,28 @@
                 <h2 class="trust-title" data-i18n="trust_title">They trust us</h2>
                 <div class="ticker-wrapper">
                     <div class="ticker">
-                        <span>Nike</span>
-                        <span>Louis Vuitton</span>
-                        <span>Shiseido</span>
                         <span>Amazon</span>
-                        <span>e-commerce stores</span>
-                        <span>adidas</span>
-                        <span>Hypermarkets</span>
-                        <span>dairies</span>
-                        <span>JAL airlines</span>
-                        <span>local businesses</span>
-                        <span>Toyota</span>
-                        <span>Sony</span>
-                        <span>Yamaha</span>
+                        <span>Shopify</span>
+                        <span>Squarespace</span>
+                        <span>Wix</span>
+                        <span>Vercel</span>
+                        <span>Claude</span>
+                        <span>Antigravity</span>
                         <!-- Duplicate for seamless loop -->
-                        <span>Nike</span>
-                        <span>Louis Vuitton</span>
-                        <span>Shiseido</span>
                         <span>Amazon</span>
-                        <span>e-commerce stores</span>
-                        <span>adidas</span>
-                        <span>Hypermarkets</span>
-                        <span>dairies</span>
-                        <span>JAL airlines</span>
-                        <span>local businesses</span>
-                        <span>Toyota</span>
-                        <span>Sony</span>
-                        <span>Yamaha</span>
-                        <span>Nike</span>
-                        <span>Louis Vuitton</span>
-                        <span>Shiseido</span>
+                        <span>Shopify</span>
+                        <span>Squarespace</span>
+                        <span>Wix</span>
+                        <span>Vercel</span>
+                        <span>Claude</span>
+                        <span>Antigravity</span>
                         <span>Amazon</span>
-                        <span>e-commerce stores</span>
-                        <span>adidas</span>
-                        <span>Hypermarkets</span>
-                        <span>dairies</span>
-                        <span>JAL airlines</span>
-                        <span>local businesses</span>
-                        <span>Toyota</span>
-                        <span>Sony</span>
-                        <span>Yamaha</span>
-                        <span>Nike</span>
-                        <span>Louis Vuitton</span>
-                        <span>Shiseido</span>
-                        <span>Amazon</span>
-                        <span>e-commerce stores</span>
-                        <span>adidas</span>
-                        <span>Hypermarkets</span>
-                        <span>dairies</span>
-                        <span>JAL airlines</span>
-                        <span>local businesses</span>
-                        <span>Toyota</span>
-                        <span>Sony</span>
-                        <span>Yamaha</span>
+                        <span>Shopify</span>
+                        <span>Squarespace</span>
+                        <span>Wix</span>
+                        <span>Vercel</span>
+                        <span>Claude</span>
+                        <span>Antigravity</span>
                     </div>
                 </div>
             </div>
@@ -258,7 +241,7 @@
                         <div class="team-card-image" style="background-image: url('jibran_ceo_portrait_1778700413955.png');"></div>
                         <div class="team-card-overlay">
                             <div class="team-card-top">
-                                <span class="role" data-i18n="team_jibran_role">CEO, SOCIAL MEDIA MANAGER</span>
+                                <span class="role" data-i18n="team_jibran_role">CEO</span>
                             </div>
                             <div class="team-card-bottom">
                                 <a href="https://wa.me/971589871084" target="_blank" class="name-link">
@@ -275,7 +258,7 @@
                         <div class="team-card-image" style="background-image: url('hamza_sales_portrait_1778700532595.png');"></div>
                         <div class="team-card-overlay">
                             <div class="team-card-top">
-                                <span class="role" data-i18n="team_hamza_role">CUSTOMER SUPPORT, SALESMAN</span>
+                                <span class="role" data-i18n="team_hamza_role">HEAD OF MARKETING</span>
                             </div>
                             <div class="team-card-bottom">
                                 <a href="https://wa.me/971526278571" target="_blank" class="name-link">
@@ -292,7 +275,7 @@
                         <div class="team-card-image" style="background-image: url('subhan_dev_portrait_1778700568525.png');"></div>
                         <div class="team-card-overlay">
                             <div class="team-card-top">
-                                <span class="role" data-i18n="team_subhan_role">CO-FOUNDER, WEB DEVELOPER</span>
+                                <span class="role" data-i18n="team_subhan_role">CO-FOUNDER & HEAD OF DEVELOPMENT</span>
                             </div>
                             <div class="team-card-bottom">
                                 <a href="https://wa.me/971562124580" target="_blank" class="name-link">
@@ -319,6 +302,290 @@
             </div>
         </section>
 
+        <!-- Services Section -->
+        <section id="services" class="container">
+            <h2 class="section-title" data-i18n="services_title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-item fade-in-hidden">
+                    <span class="service-num">01</span>
+                    <h3 data-i18n="service_web">Website Development</h3>
+                </div>
+                <div class="service-item fade-in-hidden" style="transition-delay: 0.1s;">
+                    <span class="service-num">02</span>
+                    <h3 data-i18n="service_app">App Development</h3>
+                </div>
+                <div class="service-item fade-in-hidden" style="transition-delay: 0.2s;">
+                    <span class="service-num">03</span>
+                    <h3 data-i18n="service_social">Social Media Management</h3>
+                </div>
+                <div class="service-item fade-in-hidden" style="transition-delay: 0.3s;">
+                    <span class="service-num">04</span>
+                    <h3 data-i18n="service_db">Database Setup</h3>
+                </div>
+            </div>
+            <div class="services-cta fade-in-hidden">
+                <a href="other-services.html" class="cta-link-secondary">
+                    <span data-i18n="services_more">EXPLORE OTHER SERVICES</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- Packages Section -->
+        <section id="packages" class="container">
+            <h2 class="section-title" data-i18n="packages_title">Website Development Packages</h2>
+            <div class="packages-grid">
+                <!-- Startup Package -->
+                <div class="package-card fade-in-hidden">
+                    <div class="package-header">
+                        <h3 data-i18n="p_startup_title">Startup Website</h3>
+                        <div class="price">699 AED</div>
+                    </div>
+                    <ul class="package-features">
+                        <li>6 Stock Photos</li>
+                        <li>6 Banner Design</li>
+                        <li>2 Page Static Website</li>
+                        <li>2 Query Slider Banner</li>
+                        <li>FREE Google Friendly Sitemap</li>
+                        <li>Complete W3C Certified HTML</li>
+                        <li>12 to 24 hours TAT</li>
+                        <li>Mobile Responsive will be 49 additional*</li>
+                    </ul>
+                    <a href="https://wa.me/971589871084" class="package-btn">Order Now</a>
+                </div>
+
+                <!-- Professional Package -->
+                <div class="package-card fade-in-hidden" style="transition-delay: 0.1s;">
+                    <div class="package-header">
+                        <h3 data-i18n="p_prof_title">Professional Website</h3>
+                        <div class="price">999 AED</div>
+                    </div>
+                    <ul class="package-features">
+                        <li>8+ Unique Pages Website</li>
+                        <li>CMS / Admin Panel Support</li>
+                        <li>unlimited Stock images</li>
+                        <li>6 Banner Designs</li>
+                        <li>2 jQuery Slider Banner</li>
+                        <li>FREE Google Friendly Sitemap</li>
+                        <li>Complete W3C Certified HTML</li>
+                        <li>48 to 72 hours TAT</li>
+                        <li>Complete Deployment</li>
+                        <li>Mobile Responsive will be Additional AED99*</li>
+                    </ul>
+                    <a href="https://wa.me/971589871084" class="package-btn highlight">Order Now</a>
+                </div>
+
+                <!-- Elite Package -->
+                <div class="package-card fade-in-hidden" style="transition-delay: 0.2s;">
+                    <div class="package-header">
+                        <h3 data-i18n="p_elite_title">Elite Website</h3>
+                        <div class="price">1499 AED</div>
+                    </div>
+                    <ul class="package-features">
+                        <li>Conceptual and Dynamic Website</li>
+                        <li>Mobile Responsive</li>
+                        <li>Online Reservation Tool (Optional)</li>
+                        <li>Online Payment Integration (Optional)</li>
+                        <li>Custom Forms</li>
+                        <li>Lead Capturing Forms</li>
+                        <li>Striking Hover Effects</li>
+                        <li>Newsfeed Integration</li>
+                        <li>Social Media Integration</li>
+                        <li>Search Engine Submission</li>
+                        <li>unlimited Stock Photos</li>
+                        <li>48 to 72 hours TAT</li>
+                    </ul>
+                    <a href="https://wa.me/971589871084" class="package-btn">Order Now</a>
+                </div>
+
+                <!-- High End / Interactive Package -->
+                <div class="package-card fade-in-hidden" style="transition-delay: 0.3s;">
+                    <div class="package-header">
+                        <h3 data-i18n="p_custom_title">Interactive High-End</h3>
+                        <div class="price">2499 AED</div>
+                    </div>
+                    <ul class="package-features">
+                        <li>Custom Made, Interactive & High End</li>
+                        <li>Mobile Responsive Design</li>
+                        <li>Content Management System (CMS)</li>
+                        <li>Online Appointment/Ordering (Optional)</li>
+                        <li>Multi Lingual (Optional)</li>
+                        <li>Signup Area (Newsletters, Offers)</li>
+                        <li>Website Search Bar</li>
+                        <li>10 Custom Made Banner Designs</li>
+                        <li>Unlimited Revisions</li>
+                        <li>72 to 96 Hours Initial TAT</li>
+                        <li>Dedicated Accounts Manager</li>
+                    </ul>
+                    <a href="https://wa.me/971589871084" class="package-btn">Order Now</a>
+                </div>
+
+                <!-- Custom PHP Package -->
+                <div class="package-card fade-in-hidden" style="transition-delay: 0.4s;">
+                    <div class="package-header">
+                        <h3 data-i18n="p_php_title">Custom PHP Website</h3>
+                        <div class="price">6999 AED</div>
+                    </div>
+                    <ul class="package-features">
+                        <li>Custom PHP CMS Development</li>
+                        <li>Separate Client login/signup Area</li>
+                        <li>3 jQuery Slider Banner</li>
+                        <li>100+ Stock Images</li>
+                        <li>Unlimited Revisions</li>
+                        <li>Special Hoover Effects</li>
+                        <li>Free Google Friendly Sitemap</li>
+                        <li>Industry Specified Team of Experts</li>
+                        <li>Dedicated Accounts Manager</li>
+                        <li>Complete Deployment</li>
+                    </ul>
+                    <a href="https://wa.me/971589871084" class="package-btn">Order Now</a>
+                </div>
+
+                <!-- Enterprise LMS Package -->
+                <div class="package-card fade-in-hidden" style="transition-delay: 0.5s;">
+                    <div class="package-header">
+                        <h3 data-i18n="p_lms_title">Enterprise LMS</h3>
+                        <div class="price">Custom</div>
+                    </div>
+                    <ul class="package-features">
+                        <li>Learning Management System (LMS)</li>
+                        <li>Automated Course Creation & Video Conferencing</li>
+                        <li>Skills/Certification Tracking & Gamification</li>
+                        <li>E-commerce And Subscriptions</li>
+                        <li>Invoicing & Financial Integrations</li>
+                        <li>Student Information Management</li>
+                        <li>Assessment Management & Live Feedback</li>
+                        <li>400 Stock images & 100 Unique Banners</li>
+                        <li>100% Ownership & Satisfaction</li>
+                    </ul>
+                    <a href="https://wa.me/971589871084" class="package-btn">Consult Now</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Media Management Section -->
+        <section id="social-packages" class="container">
+            <h2 class="section-title" data-i18n="social_packages_title">Social Media Management</h2>
+            <div class="packages-grid">
+                <!-- Starter Package -->
+                <div class="package-card social-card silver fade-in-hidden">
+                    <div class="package-header">
+                        <span class="package-tag">Starter</span>
+                        <h3>The Launchpad</h3>
+                        <div class="price">699 AED<span>/mo</span></div>
+                    </div>
+                    <ul class="package-features">
+                        <li>12-15 Static Posts/Carousels</li>
+                        <li>4 Short-form Videos (Stock/Client Media)</li>
+                        <li>Copywriting (English)</li>
+                        <li>Grid Planning & Scheduling</li>
+                        <li>Community Management (24h response)</li>
+                        <li>Monthly PDF Report</li>
+                    </ul>
+                    <a href="https://wa.me/971589871084" class="package-btn">Choose Starter</a>
+                </div>
+
+                <!-- Growth Package -->
+                <div class="package-card social-card pinky fade-in-hidden" style="transition-delay: 0.1s;">
+                    <div class="package-header">
+                        <span class="package-tag">Growth</span>
+                        <h3>The Market Scale</h3>
+                        <div class="price">1000 AED<span>/mo</span></div>
+                    </div>
+                    <ul class="package-features">
+                        <li>20-25 Assets / Month</li>
+                        <li>10-12 High-Quality Short-form Videos</li>
+                        <li>Bilingual Copywriting (EN + AR)</li>
+                        <li>On-Site Shoot (Mobile Videography)</li>
+                        <li>Active Community Management (2h window)</li>
+                        <li>Influencer/KOL Outreach</li>
+                        <li>Detailed Analytics Dashboard</li>
+                    </ul>
+                    <a href="https://wa.me/971589871084" class="package-btn highlight-pink">Choose Growth</a>
+                </div>
+
+                <!-- Premium Package -->
+                <div class="package-card social-card silver fade-in-hidden" style="transition-delay: 0.2s;">
+                    <div class="package-header">
+                        <span class="package-tag">Premium</span>
+                        <h3>The Omni-Presence</h3>
+                        <div class="price">5000 AED<span>/mo</span></div>
+                    </div>
+                    <ul class="package-features">
+                        <li>Daily Publishing (30+ Assets)</li>
+                        <li>16-20 Premium Reels/TikToks</li>
+                        <li>Premium Bilingual Copy (Culturally Nuanced)</li>
+                        <li>2 Dedicated Production Days</li>
+                        <li>Dedicated Account Manager</li>
+                        <li>Weekend Community Coverage</li>
+                        <li>Paid Ads Management Integration</li>
+                        <li>Monthly Strategy Presentation</li>
+                    </ul>
+                    <a href="https://wa.me/971589871084" class="package-btn">Choose Premium</a>
+                </div>
+            </div>
+
+            <!-- Add-ons -->
+            <div class="add-ons-container fade-in-hidden">
+                <h3 class="add-ons-title">Crucial Add-ons</h3>
+                <div class="add-ons-grid">
+                    <div class="add-on-item">
+                        <span>Meta / TikTok Ads</span>
+                        <strong>10-15% of spend</strong>
+                    </div>
+                    <div class="add-on-item">
+                        <span>Bilingual Add-on</span>
+                        <strong>1,000 AED/mo</strong>
+                    </div>
+                    <div class="add-on-item">
+                        <span>Extra Shoot Day</span>
+                        <strong>500 - 700 AED</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Inquiry Form Section -->
+        <section id="inquiry" class="container">
+            <div class="inquiry-card fade-in-hidden">
+                <div class="inquiry-header">
+                    <h2 data-i18n="inquiry_title">Ready to scale?</h2>
+                    <p data-i18n="inquiry_sub">Send us a brief and we'll get back to you with a strategy.</p>
+                </div>
+                <form id="contact-form" class="inquiry-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder=" " required>
+                        <label for="name" data-i18n="form_name">Full Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder=" " required>
+                        <label for="email" data-i18n="form_email">Email Address</label>
+                    </div>
+                    <div class="form-group">
+                        <select id="service" name="service">
+                            <option value="web" data-i18n="service_web">Website Development</option>
+                            <option value="social" data-i18n="service_social">Social Media Management</option>
+                            <option value="app" data-i18n="service_app">App Development</option>
+                            <option value="other" data-i18n="service_other">Other Inquiry</option>
+                        </select>
+                        <label for="service" data-i18n="form_service">Interested In</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" rows="4" placeholder=" " required></textarea>
+                        <label for="message" data-i18n="form_message">Tell us about your project</label>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <span data-i18n="form_submit">SEND MESSAGE</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </section>
+
         <!-- About & Contact Section -->
         <section id="about-contact" class="about-contact-section">
             <div class="container">
@@ -332,9 +599,17 @@
                         <div class="contact-item">
                             <a href="mailto:skidsmediaa@gmail.com" class="contact-link large">skidsmediaa@gmail.com</a>
                         </div>
+                        <div class="contact-item extras">
+                            <a href="other-services.html" class="extra-services-btn">
+                                <span data-i18n="services_more">EXPLORE EXTENDED SERVICES</span>
+                            </a>
+                            <a href="process.html" class="extra-services-btn outline">
+                                <span data-i18n="nav_process">OUR WORK PROCESS</span>
+                            </a>
+                        </div>
                         <div class="contact-item socials">
                             <a href="https://instagram.com/skidsmedia.ae" target="_blank" class="social-link">insta : skidsmedia.ae</a>
-                            <a href="https://tiktok.com/@skidsmedia" target="_blank" class="social-link">tiktok : skidsmedia</a>
+                            <a href="https://tiktok.com/@skidsmedia.ae" target="_blank" class="social-link">tiktok : skidsmedia.ae</a>
                         </div>
                     </div>
                     
