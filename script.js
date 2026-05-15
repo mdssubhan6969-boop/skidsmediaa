@@ -17,26 +17,34 @@ window.addEventListener('DOMContentLoaded', () => {
 function startHeroLoop() {
     const heroTitle = document.getElementById('hero-title-dynamic');
     if (!heroTitle) return;
+    const span = heroTitle.querySelector('span');
+    if (!span) return;
 
     const phrases = [
         "Website Production House,",
-        "Born in Dubai,",
-        "We build, we scale,",
-        "And you grow."
+        "Born Dubai"
     ];
     let index = 0;
 
     setInterval(() => {
-        heroTitle.style.opacity = 0;
-        heroTitle.style.transform = 'translateY(20px)';
+        // Slide out Up
+        span.classList.add('slide-out');
         
         setTimeout(() => {
             index = (index + 1) % phrases.length;
-            heroTitle.textContent = phrases[index];
-            heroTitle.style.opacity = 1;
-            heroTitle.style.transform = 'translateY(0)';
-        }, 500); // Wait for fade out
-    }, 2500); // 2.5s per phrase = 10s total loop
+            span.textContent = phrases[index];
+            
+            // Prepare for Slide in from Bottom
+            span.classList.remove('slide-out');
+            span.classList.add('slide-in');
+            
+            // Force a reflow
+            void span.offsetWidth;
+            
+            // Slide in
+            span.classList.remove('slide-in');
+        }, 800); // Match CSS transition duration
+    }, 3000); // 3s per phrase (2s visible + 1s animation)
 }
 
 const translations = {
@@ -46,6 +54,7 @@ const translations = {
         nav_souls: "SKIDS SOULS",
         nav_team: "TEAM",
         nav_contact: "CONTACT",
+        nav_results: "RESULTS",
         hero_title: "Website Production House,",
         feat_integrate: "INTEGRATE",
         feat_collaborate: "COLLABORATE",
@@ -80,7 +89,7 @@ const translations = {
         team_manifesto_1: "From ajman to dubai,",
         team_manifesto_2: "We come from all",
         team_manifesto_3: "over the world",
-        team_jibran_role: "CEO",
+        team_jibran_role: "MARKETING DIRECTOR",
         team_hamza_role: "HEAD OF MARKETING",
         nav_services: "SERVICES",
         nav_packages: "PACKAGES",
@@ -115,7 +124,11 @@ const translations = {
         contact_keep_in_touch: "Keep in touch",
         contact_start_conv: "Start a conversation",
         contact_offices: "Our offices :",
-        contact_office_loc: "coming in ramada black square soon"
+        contact_office_loc: "COMING IN RAMADA BLACK SQUARE SOON, STAY TUNED!",
+        nav_other_services: "EXTENDED SERVICES",
+        nav_results: "RESULTS",
+        story_title: "Our Story",
+        story_text: "Skids was born out of a real-life wakeup call on a mountain highway. Driving through a freezing winter night, my car hit a patch of black ice and began to spin out of control toward the edge. In that critical second, the tires suddenly caught the asphalt, creating a violent skid that regained traction and stopped the car. That skid saved my life. Looking back at those tire marks, I realized that running a business is exactly like navigating a dangerous mountain road. One unexpected market shift can cause a company to lose its grip, slip, and fail. That is why I founded Skids. We act as the traction your business needs when the ground gets shaky. Our mission is to provide the strategic support, stability, and momentum to help entrepreneurs stop spinning, regain control, and safely scale their businesses."
     },
     ur: {
         nav_work: "کام ←",
@@ -157,13 +170,16 @@ const translations = {
         team_manifesto_1: "عجمان سے دبئی تک،",
         team_manifesto_2: "ہم سب سے آتے ہیں",
         team_manifesto_3: "پوری دنیا میں",
-        team_jibran_role: "سی ای او",
+        team_jibran_role: "مارکیٹنگ ڈائریکٹر",
         team_hamza_role: "مارکیٹنگ کا سربراہ",
         team_subhan_role: "شریک بانی اور ترقی کے سربراہ",
         contact_keep_in_touch: "رابطے میں رہیں",
         contact_start_conv: "گفتگو شروع کریں",
         contact_offices: "ہمارے دفاتر:",
-        contact_office_loc: "جلد ہی رمادا بلیک اسکوائر میں آرہا ہے۔"
+        contact_office_loc: "جلد ہی رمادا بلیک اسکوائر میں آرہا ہے۔",
+        nav_other_services: "توسیع شدہ خدمات",
+        story_title: "ہماری کہانی",
+        story_text: "سکیڈز کی بنیاد پہاڑی شاہراہ پر ایک حقیقی زندگی کے سبق سے پڑی۔ سردیوں کی ایک منجمد رات، میری کار سیاہ برف سے ٹکرائی اور کنٹرول سے باہر ہو کر کنارے کی طرف گھومنے لگی۔ اس نازک سیکنڈ میں، ٹائروں نے اچانک سڑک کو پکڑ لیا، جس سے ایک شدید 'سکیڈ' پیدا ہوا جس نے گرفت بحال کی اور کار روک دی۔ اس سکیڈ نے میری جان بچا لی۔ ان ٹائروں کے نشانات کو دیکھ کر، مجھے احساس ہوا کہ کاروبار چلانا بالکل ایک خطرناک پہاڑی سڑک پر سفر کرنے جیسا ہے۔ ایک غیر متوقع مارکیٹ تبدیلی کمپنی کی گرفت کھو دینے، پھسلنے اور ناکام ہونے کا سبب بن سکتی ہے۔ اسی لیے میں نے سکیڈز کی بنیاد رکھی۔ ہم وہ گرفت (traction) فراہم کرتے ہیں جس کی آپ کے کاروبار کو ضرورت ہوتی ہے جب زمین لرزتی ہے۔ ہمارا مشن کاروباری افراد کو گھومنے سے روکنے، کنٹرول بحال کرنے اور محفوظ طریقے سے اپنے کاروبار کو وسعت دینے کے لیے تزویراتی تعاون، استحکام اور رفتار فراہم کرنا ہے۔"
     },
     ar: {
         nav_work: "الأعمال ←",
@@ -205,13 +221,16 @@ const translations = {
         team_manifesto_1: "من عجمان إلى دبي،",
         team_manifesto_2: "نحن نأتي من جميع",
         team_manifesto_3: "أنحاء العالم",
-        team_jibran_role: "الرئيس التنفيذي",
+        team_jibran_role: "مدير التسويق",
         team_hamza_role: "رئيس قسم التسويق",
         team_subhan_role: "مؤسس مشارك ورئيس قسم التطوير",
         contact_keep_in_touch: "ابق على تواصل",
         contact_start_conv: "ابدأ محادثة",
         contact_offices: "مكاتبنا:",
-        contact_office_loc: "قريباً في رمادا بلاك سكوير"
+        contact_office_loc: "قريباً في رمادا بلاك سكوير",
+        nav_other_services: "خدمات موسعة",
+        story_title: "قصتنا",
+        story_text: "ولدت سكيدز من تجربة حقيقية على طريق جبلي سريع. في ليلة شتاء قارصة، اصطدمت سيارتي بطبقة من الجليد الأسود وبدأت في الدوران خارج السيطرة نحو الحافة. في تلك الثانية الحرجة، أمسكت الإطارات فجأة بالأسفلت، مما أدى إلى انزلاق قوي (skid) استعاد التوازن وأوقف السيارة. هذا الانزلاق أنقذ حياتي. بالنظر إلى آثار الإطارات تلك، أدركت أن إدارة الأعمال تشبه تمامًا التنقل في طريق جبلي خطير. تحول غير متوقع في السوق يمكن أن يتسبب في فقدان الشركة لسيطرتها وتعثرها وفشلها. لهذا السبب أسست سكيدز. نحن نعمل كقوة الجر التي يحتاجها عملك عندما تهتز الأرض. مهمتنا هي توفير الدعم الاستراتيجي والاستقرار والزخم لمساعدة رواد الأعمال على التوقف عن الدوران، واستعادة السيطرة، وتوسيع أعمالهم بأمان."
     },
     hi: {
         nav_work: "→ काम",
@@ -270,13 +289,16 @@ const translations = {
         team_manifesto_1: "अजमान से दुबई तक,",
         team_manifesto_2: "हम सब से आते हैं",
         team_manifesto_3: "पूरी दुनिया में",
-        team_jibran_role: "सीईओ",
+        team_jibran_role: "मार्केटिंग डायरेक्टर",
         team_hamza_role: "मार्केटिंग प्रमुख",
         team_subhan_role: "सह-संस्थापक और विकास प्रमुख",
         contact_keep_in_touch: "संपर्क में रहें",
         contact_start_conv: "बातचीत शुरू करें",
         contact_offices: "हमारे कार्यालय:",
-        contact_office_loc: "जल्द ही रमाडा ब्लैक स्क्वायर में आ रहा है"
+        contact_office_loc: "जल्द ही रमाडा ब्लैक स्क्वायर में आ रहा है",
+        nav_other_services: "विस्तारित सेवाएँ",
+        story_title: "हमारी कहानी",
+        story_text: "स्किड्स का जन्म एक पहाड़ी राजमार्ग पर जीवन के वास्तविक सबक से हुआ था। कड़ाके की ठंड की एक रात में ड्राइविंग करते समय, मेरी कार काली बर्फ के एक टुकड़े से टकरा गई और किनारे की ओर अनियंत्रित होकर घूमने लगी। उस महत्वपूर्ण क्षण में, टायरों ने अचानक डामर को पकड़ लिया, जिससे एक जोरदार 'स्किड' पैदा हुआ जिसने पकड़ वापस पा ली और कार को रोक दिया। उस स्किड ने मेरी जान बचाई। टायरों के उन निशानों को पीछे मुड़कर देखते हुए, मुझे एहसास हुआ कि व्यवसाय चलाना बिल्कुल एक खतरनाक पहाड़ी सड़क पर चलने जैसा है। बाजार में एक अप्रत्याशित बदलाव किसी कंपनी की पकड़ खोने, फिसलने और विफल होने का कारण बन सकता है। इसीलिए मैंने स्किड्स की स्थापना की। जब जमीन हिलती है, तो हम आपके व्यवसाय के लिए आवश्यक पकड़ (traction) के रूप में कार्य करते हैं। हमारा मिशन उद्यमियों को अनियंत्रित होने से रोकने, नियंत्रण वापस पाने और सुरक्षित रूप से अपने व्यवसाय को बढ़ाने के लिए रणनीतिक सहायता, स्थिरता और गति प्रदान करना है।"
     }
 };
 
@@ -303,10 +325,31 @@ function setLanguage(lang) {
     });
 }
 
+function triggerPageTransition(callback) {
+    const overlay = document.getElementById('transition-overlay');
+    if (!overlay) {
+        callback();
+        return;
+    }
+
+    // 2 Sec Fade Out
+    overlay.className = 'active fade-out-transition';
+    
+    setTimeout(() => {
+        callback();
+        
+        // 0.3 Sec Fade In
+        overlay.className = 'active fade-in-transition';
+        setTimeout(() => {
+            overlay.className = '';
+        }, 300);
+    }, 2000);
+}
+
 document.querySelectorAll('.lang-selector span').forEach(btn => {
     btn.addEventListener('click', () => {
         const lang = btn.getAttribute('data-lang');
-        setLanguage(lang);
+        triggerPageTransition(() => setLanguage(lang));
     });
 });
 
@@ -387,12 +430,59 @@ if (mobileMenuBtn) {
     });
 }
 
-// Close mobile menu when clicking a link
-document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-        mobileMenuBtn.classList.remove('active');
-        navLinks.classList.remove('active');
+// Transition for all navigation-style links
+document.querySelectorAll('.nav-links a, .btn-back, .cta-link-secondary, .extra-services-btn').forEach(link => {
+    link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        if (!href) return;
+
+        // Internal hash links
+        if (href.startsWith('#')) {
+            e.preventDefault();
+            triggerPageTransition(() => {
+                const targetElement = document.querySelector(href);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        } 
+        // External page links (like portfolio.html or index.html)
+        else if (href.endsWith('.html')) {
+            e.preventDefault();
+            triggerPageTransition(() => {
+                window.location.href = href;
+            });
+        }
+        
+        if (mobileMenuBtn) {
+            mobileMenuBtn.classList.remove('active');
+            navLinks.classList.remove('active');
+        }
     });
+});
+
+// Cookie Consent Logic
+function initCookieBanner() {
+    const banner = document.getElementById('cookie-banner');
+    const acceptBtn = document.getElementById('accept-cookies');
+    
+    if (!banner || !acceptBtn) return;
+
+    // Check if user has already accepted
+    if (!localStorage.getItem('cookies-accepted')) {
+        setTimeout(() => {
+            banner.classList.add('show');
+        }, 2000);
+    }
+
+    acceptBtn.addEventListener('click', () => {
+        localStorage.setItem('cookies-accepted', 'true');
+        banner.classList.remove('show');
+    });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    initCookieBanner();
 });
 
 document.querySelectorAll('.project-card, .section-title, .feature-section, .manifesto-section, .team-section, .service-item, .package-card, .add-ons-container, .inquiry-card').forEach(el => {

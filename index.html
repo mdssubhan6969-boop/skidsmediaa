@@ -39,6 +39,13 @@
         </div>
     </div>
 
+    <div id="transition-overlay"></div>
+
+    <div id="cookie-banner">
+        <p class="cookie-text">We use cookies to enhance your digital experience at Skids Media.</p>
+        <button id="accept-cookies" class="cookie-btn">ACCEPT</button>
+    </div>
+
     <nav>
         <div class="nav-container-fluid">
             <div class="logo">SKIDS MEDIA</div>
@@ -54,14 +61,17 @@
                     <span></span>
                 </div>
                 <ul class="nav-links">
-                    <li><a href="#projects" data-i18n="nav_work">→ WORK</a></li>
                     <li><a href="#manifesto" data-i18n="nav_manifesto">MANIFESTO</a></li>
+                    <li><a href="#projects" data-i18n="nav_work">→ WORK</a></li>
+                    <li><a href="portfolio.html" data-i18n="nav_results">RESULTS</a></li>
+                    <li><a href="ai.html">SKIDS AI</a></li>
+                    <li><a href="#trust" data-i18n="trust_title">TRUST</a></li>
+                    <li><a href="#team" data-i18n="nav_team">TEAM</a></li>
+                    <li><a href="#story" data-i18n="story_title">OUR STORY</a></li>
                     <li><a href="#services" data-i18n="nav_services">SERVICES</a></li>
+                    <li><a href="#packages" data-i18n="nav_packages">PACKAGES</a></li>
+                    <li><a href="other-services.html" data-i18n="nav_other_services">EXTENDED SERVICES</a></li>
                     <li><a href="process.html" data-i18n="nav_process">PROCESS</a></li>
-                    <li><a href="#packages" data-i18n="nav_packages">WEB PACKAGES</a></li>
-                    <li><a href="#social-packages" data-i18n="nav_social_packages">SOCIAL PACKAGES</a></li>
-                    <li><a href="#team" data-i18n="nav_souls">SKIDS SOULS</a></li>
-                    <li><a href="#team-cards" data-i18n="nav_team">TEAM</a></li>
                     <li><a href="#about-contact" data-i18n="nav_contact">CONTACT</a></li>
                 </ul>
             </div>
@@ -74,7 +84,7 @@
                 <source src="hero-video.mp4(1).mp4" type="video/mp4">
             </video>
             <div class="hero-overlay"></div>
-            <h1 id="hero-title-dynamic">Website Production House,</h1>
+            <h1 id="hero-title-dynamic"><span>Website Production House,</span></h1>
         </section>
 
         <section id="manifesto" class="manifesto-section">
@@ -83,6 +93,7 @@
                 <p data-i18n="manifesto_text">WE BUILD, WE SCALE AND YOU GROW.</p>
             </div>
         </section>
+
 
         <section id="projects" class="container">
             <h2 class="section-title" data-i18n="projects_title">Selected Works</h2>
@@ -176,12 +187,6 @@
             </div>
         </section>
 
-        <section id="manifesto" class="manifesto-section">
-            <h2 class="section-title" data-i18n="nav_manifesto">MANIFESTO</h2>
-            <div class="manifesto-text">
-                <p data-i18n="manifesto_text">WE BUILD, WE SCALE AND YOU GROW.</p>
-            </div>
-        </section>
 
         <!-- Features (Integrate, Collaborate, Challenge) Moved Before Team -->
         <section id="integrate" class="feature-section container">
@@ -238,16 +243,18 @@
                 <!-- Jibran -->
                 <div class="team-card">
                     <div class="team-card-inner">
-                        <div class="team-card-image" style="background-image: url('jibran_ceo_portrait_1778700413955.png');"></div>
+                        <div class="team-card-image" style="background-image: url('pfp for jibran,hamza,subhan.jpg');"></div>
                         <div class="team-card-overlay">
                             <div class="team-card-top">
-                                <span class="role" data-i18n="team_jibran_role">CEO</span>
+                                <span class="role" data-i18n="team_jibran_role">MARKETING DIRECTOR</span>
                             </div>
                             <div class="team-card-bottom">
                                 <a href="https://wa.me/971589871084" target="_blank" class="name-link">
                                     <h3 class="name">Jibran</h3>
                                 </a>
-                                <div class="expand-btn">+</div>
+                                <a href="https://wa.me/971589871084" target="_blank" class="expand-link">
+                                    <div class="expand-btn">+</div>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -255,7 +262,7 @@
                 <!-- Hamza -->
                 <div class="team-card">
                     <div class="team-card-inner">
-                        <div class="team-card-image" style="background-image: url('hamza_sales_portrait_1778700532595.png');"></div>
+                        <div class="team-card-image" style="background-image: url('pfp for jibran,hamza,subhan.jpg');"></div>
                         <div class="team-card-overlay">
                             <div class="team-card-top">
                                 <span class="role" data-i18n="team_hamza_role">HEAD OF MARKETING</span>
@@ -264,7 +271,9 @@
                                 <a href="https://wa.me/971526278571" target="_blank" class="name-link">
                                     <h3 class="name">Hamza</h3>
                                 </a>
-                                <div class="expand-btn">+</div>
+                                <a href="https://wa.me/971526278571" target="_blank" class="expand-link">
+                                    <div class="expand-btn">+</div>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -272,7 +281,7 @@
                 <!-- Subhan -->
                 <div class="team-card">
                     <div class="team-card-inner">
-                        <div class="team-card-image" style="background-image: url('subhan_dev_portrait_1778700568525.png');"></div>
+                        <div class="team-card-image" style="background-image: url('pfp for jibran,hamza,subhan.jpg');"></div>
                         <div class="team-card-overlay">
                             <div class="team-card-top">
                                 <span class="role" data-i18n="team_subhan_role">CO-FOUNDER & HEAD OF DEVELOPMENT</span>
@@ -281,10 +290,26 @@
                                 <a href="https://wa.me/971562124580" target="_blank" class="name-link">
                                     <h3 class="name">Subhan</h3>
                                 </a>
-                                <div class="expand-btn">+</div>
+                                <a href="https://wa.me/971562124580" target="_blank" class="expand-link">
+                                    <div class="expand-btn">+</div>
+                                </a>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="story" class="story-section container">
+            <div class="story-grid">
+                <div class="story-content">
+                    <h2 data-i18n="story_title">Our Story</h2>
+                    <div class="story-text">
+                        <p data-i18n="story_text">Skids was born out of a real-life wakeup call on a mountain highway. Driving through a freezing winter night, my car hit a patch of black ice and began to spin out of control toward the edge. In that critical second, the tires suddenly caught the asphalt, creating a violent skid that regained traction and stopped the car. That skid saved my life. Looking back at those tire marks, I realized that running a business is exactly like navigating a dangerous mountain road. One unexpected market shift can cause a company to lose its grip, slip, and fail. That is why I founded Skids. We act as the traction your business needs when the ground gets shaky. Our mission is to provide the strategic support, stability, and momentum to help entrepreneurs stop spinning, regain control, and safely scale their businesses.</p>
+                    </div>
+                </div>
+                <div class="story-visual">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=2000" alt="Team Meeting" class="story-image">
                 </div>
             </div>
         </section>
@@ -539,10 +564,6 @@
                         <span>Bilingual Add-on</span>
                         <strong>1,000 AED/mo</strong>
                     </div>
-                    <div class="add-on-item">
-                        <span>Extra Shoot Day</span>
-                        <strong>500 - 700 AED</strong>
-                    </div>
                 </div>
             </div>
         </section>
@@ -554,7 +575,7 @@
                     <h2 data-i18n="inquiry_title">Ready to scale?</h2>
                     <p data-i18n="inquiry_sub">Send us a brief and we'll get back to you with a strategy.</p>
                 </div>
-                <form id="contact-form" class="inquiry-form">
+                <form id="contact-form" class="inquiry-form" novalidate>
                     <div class="form-group">
                         <input type="text" id="name" name="name" placeholder=" " required>
                         <label for="name" data-i18n="form_name">Full Name</label>
@@ -570,7 +591,6 @@
                             <option value="app" data-i18n="service_app">App Development</option>
                             <option value="other" data-i18n="service_other">Other Inquiry</option>
                         </select>
-                        <label for="service" data-i18n="form_service">Interested In</label>
                     </div>
                     <div class="form-group">
                         <textarea id="message" name="message" rows="4" placeholder=" " required></textarea>
@@ -583,6 +603,13 @@
                         </svg>
                     </button>
                 </form>
+                
+                <div class="form-credits">
+                    <p>Writer ✦ Vân Anh Nguyễn</p>
+                    <p>Photographer ✦ Tung Thanh Le</p>
+                    <p>Creatives ✦ Robin Mahieux, Vicki Dang</p>
+                    <a href="#team" class="discover-souls-link">Discover skids souls</a>
+                </div>
             </div>
         </section>
 
@@ -599,14 +626,6 @@
                         <div class="contact-item">
                             <a href="mailto:skidsmediaa@gmail.com" class="contact-link large">skidsmediaa@gmail.com</a>
                         </div>
-                        <div class="contact-item extras">
-                            <a href="other-services.html" class="extra-services-btn">
-                                <span data-i18n="services_more">EXPLORE EXTENDED SERVICES</span>
-                            </a>
-                            <a href="process.html" class="extra-services-btn outline">
-                                <span data-i18n="nav_process">OUR WORK PROCESS</span>
-                            </a>
-                        </div>
                         <div class="contact-item socials">
                             <a href="https://instagram.com/skidsmedia.ae" target="_blank" class="social-link">insta : skidsmedia.ae</a>
                             <a href="https://tiktok.com/@skidsmedia.ae" target="_blank" class="social-link">tiktok : skidsmedia.ae</a>
@@ -615,16 +634,25 @@
                     
                     <div class="contact-column">
                         <div class="contact-item">
-                            <p class="contact-text">Jibran: <a href="tel:0589871084">0589871084</a></p>
-                            <p class="contact-text">Hamza: <a href="tel:0526278571">052 627 8571</a></p>
-                            <p class="contact-text">Subhan: <a href="tel:0562124580">0562124580</a></p>
+                            <p class="contact-text">Jibran: <a href="tel:+971589871084">+971 58 987 1084</a></p>
+                            <p class="contact-text">Hamza: <a href="tel:+971526278571">+971 52 627 8571</a></p>
+                            <p class="contact-text">Subhan: <a href="tel:+971562124580">+971 56 212 4580</a></p>
                         </div>
                     </div>
                     
                     <div class="contact-column">
                         <div class="contact-item">
                             <span class="column-label" data-i18n="contact_offices">Our offices :</span>
-                            <p class="contact-text" data-i18n="contact_office_loc">coming in ramada black square soon</p>
+                            <p class="contact-text" data-i18n="contact_office_loc">COMING IN RAMADA BLACK SQUARE SOON, STAY TUNED!</p>
+                        </div>
+                        <div class="contact-item pages-links">
+                            <span class="column-label">Quick Links :</span>
+                            <div class="extras" style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start;">
+                                <a href="portfolio.html" class="extra-services-btn">view results</a>
+                                <a href="ai.html" class="extra-services-btn">view SKIDS AI</a>
+                                <a href="other-services.html" class="extra-services-btn outline">view extended services</a>
+                                <a href="process.html" class="extra-services-btn outline">view work process</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -635,7 +663,7 @@
         <footer class="minimal-footer">
             <div class="container">
                 <div class="footer-bottom">
-                    <p>&copy; 2026 SKIDS MEDIA. All rights reserved.</p>
+                    <p>&copy; 2025 SKIDS MEDIA. All rights reserved.</p>
                 </div>
             </div>
         </footer>
