@@ -543,20 +543,20 @@ section {
     align-items: center;
     gap: 1.5rem;
     text-decoration: none;
-    color: #fff;
+    color: #ffffff !important;
     font-weight: 800;
     font-size: 1.2rem;
     letter-spacing: 2px;
     padding: 2rem 3rem;
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 2px solid #ffffff;
     border-radius: 50px;
-    background: rgba(255,255,255,0.03);
+    background: transparent;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .cta-link-secondary:hover {
-    background: #fff;
-    color: #000;
+    background: #ffffff;
+    color: #000000 !important;
     transform: scale(1.05);
 }
 
@@ -1545,13 +1545,14 @@ section {
         height: 100vh;
         background: #000;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         text-align: center;
         gap: 2.5rem;
         transition: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
         z-index: 1000;
-        padding: 0;
+        padding: 100px 0;
+        overflow-y: auto;
     }
     .nav-links.active { right: 0; }
     .nav-links a { font-size: 1.8rem; }

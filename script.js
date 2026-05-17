@@ -296,12 +296,44 @@ const translations = {
     }
 };
 
+function translateDigits(text, lang) {
+    if (typeof text !== 'string') return text;
+    if (lang === 'ar') return text.replace(/\d/g, d => '٠١٢٣٤٥٦٧٨٩'[d]);
+    if (lang === 'ur') return text.replace(/\d/g, d => '۰۱۲۳۴۵۶۷۸۹'[d]);
+    if (lang === 'hi') return text.replace(/\d/g, d => '०१२३४५६७८९'[d]);
+    return text;
+}
+
 function setLanguage(lang) {
     const elements = document.querySelectorAll('[data-i18n]');
     elements.forEach(el => {
         const key = el.getAttribute('data-i18n');
         if (translations[lang] && translations[lang][key]) {
-            el.textContent = translations[lang][key];
+            el.textContent = translateDigits(translations[lang][key], lang);
+        }
+    });
+
+    if (!window.originalTextNodes) {
+        window.originalTextNodes = new Map();
+        const walk = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+            acceptNode: function(node) {
+                if (node.parentNode && node.parentNode.closest('[data-i18n]')) return NodeFilter.FILTER_REJECT;
+                const tag = node.parentNode ? node.parentNode.tagName : '';
+                if (tag === 'SCRIPT' || tag === 'STYLE' || tag === 'NOSCRIPT') return NodeFilter.FILTER_REJECT;
+                return NodeFilter.FILTER_ACCEPT;
+            }
+        });
+        let n;
+        while(n = walk.nextNode()) {
+            if (n.nodeValue.trim() !== '') {
+                window.originalTextNodes.set(n, n.nodeValue);
+            }
+        }
+    }
+    
+    window.originalTextNodes.forEach((orig, node) => {
+        if (node.parentNode) {
+            node.nodeValue = translateDigits(orig, lang);
         }
     });
 
