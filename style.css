@@ -60,18 +60,13 @@
     animation: clearText 2.5s cubic-bezier(0.16, 1, 0.3, 1) forwards 0.5s;
 }
 
-.intro-content .hello {
+.intro-content .hello,
+.intro-content .skids {
     font-family: var(--font-main);
     font-size: 5rem;
     font-weight: 300;
     letter-spacing: -2px;
-}
-
-.intro-content .skids {
-    font-family: var(--font-main);
-    font-size: 6rem;
-    font-weight: 800;
-    letter-spacing: -4px;
+    text-transform: lowercase;
     color: #fff;
 }
 
@@ -1519,8 +1514,8 @@ section {
 
 @media (max-width: 768px) {
     .intro-content { gap: 0.5rem; flex-direction: column; align-items: center; }
-    .intro-content .hello { font-size: 2rem; }
-    .intro-content .skids { font-size: 4rem; letter-spacing: -2px; }
+    .intro-content .hello,
+    .intro-content .skids { font-size: 2.5rem; letter-spacing: -1px; }
 
     nav { padding: 1.5rem 0; width: 100%; }
     .nav-container-fluid { padding: 0 1.5rem; width: 100%; }
